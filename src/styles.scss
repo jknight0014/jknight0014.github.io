@@ -1,0 +1,167 @@
+/* Customized styles */
+
+
+/* This is the main background color, I chose a light green tinge to give it a more earthy warm feel */
+
+$main-background-color: color("green", "lighten-5");
+$root-background-color: color("teal", "darken-4");
+html {
+    background-color: $main-background-color;
+}
+
+#mainnav {
+    min-height: $navbar-height;
+    @media #{$medium-and-down} {
+        min-height: $navbar-height-mobile;
+    }
+    nav {
+        z-index: 1000;
+        background-color: $main-background-color;
+        .nav-wrapper .brand-logo img {
+            height: $navbar-height;
+            border: 10px solid transparent;
+        }
+        a {
+            color: $primary-color;
+        }
+        @media #{$medium-and-down} {
+            .nav-wrapper .brand-logo img {
+                height: $navbar-height-mobile;
+            }
+        }
+    }
+}
+
+#top-banner {
+    &.parallax-container {
+        min-height: calc(100vh - 64px);
+    }
+    p {
+        @extend h5,
+        .light;
+    }
+    #skip-to-content {
+        position: absolute;
+        width: $button-floating-size;
+        height: $button-floating-size;
+        bottom: $navbar-height;
+        right: $navbar-height;
+    }
+    @media #{$medium-and-down} {
+        &.parallax-container {
+            min-height: calc(100vh - 56px);
+        }
+        #skip-to-content {
+            bottom: $navbar-height-mobile;
+            right: $navbar-height-mobile;
+        }
+    }
+}
+
+.side-nav {
+    .userView {
+        .name {
+            // add bottom padding as well to space out for tap area
+            padding-bottom: 16px;
+        }
+        .email {
+            // make the font slightly larger since it is going to be clickable
+            font-size: $sidenav-font-size + 4;
+        }
+        .tel {
+            @extend .email;
+        }
+    }
+}
+
+#nav-desktop.table-of-contents {
+    li {
+        transition: background-color .3s;
+        float: left;
+        padding: 0;
+    }
+    a {
+        display: inline-block;
+        transition: background-color .3s;
+        font-size: $navbar-font-size;
+        font-weight: 400;
+        color: $navbar-font-color;
+        padding-left: 15px;
+        cursor: pointer;
+        color: $primary-color;
+        height: auto;
+        line-height: inherit;
+        letter-spacing: .4;
+        &:hover {
+            border-left: 0;
+            padding-left: 15px;
+        }
+        &.active {
+            font-weight: 400;
+            border-left: 0;
+            padding-left: 15px;
+            border-bottom: 5px solid $primary-color;
+        }
+    }
+}
+
+.btn,
+.btn-flat {
+    text-transform: none;
+}
+
+.parallax-container {
+    min-height: 38.1966vh;
+    height: auto;
+    color: white;
+    .parallax {
+        background-color: $root-background-color;
+    }
+}
+
+p {
+    line-height: 2rem;
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.collection .collection-item i.fa {
+    padding-right: 2em;
+}
+
+.darken {
+    background: $main-background-color;
+    filter: brightness(38.1966%);
+}
+
+.call-to-action {
+    @extend .white-text,
+    .btn,
+    .light,
+    .waves-effect,
+    .waves-light,
+    .hoverable;
+    height: $button-height * 2.0;
+    line-height: $button-height * 2.0;
+    font-size: 1.6rem;
+    i {
+        font-size: 1.6rem;
+    }
+    margin: 10px;
+}
+
+.chatbutton {
+    display: none;
+}
+
+footer.page-footer {
+    .footer-copyright {
+        background-color: color("green", "darken-4");
+        padding: 0 1.6rem;
+    }
+    .footer-copyright > div {
+        width: 100%;
+    }
+}
